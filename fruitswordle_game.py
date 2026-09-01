@@ -1,4 +1,5 @@
-import random
+import streamlit as st
+st.title("fruitswordle")
 
 print("🟩🟨⬛ WELCOME TO WORDLE MINI ⬛🟨🟩")
 print("ลองทายคำศัพท์หมวดผลไม้ภาษาอังกฤษที่มี 5 ตัวอักษรให้ถูกภายใน 6 ครั้ง\n")
