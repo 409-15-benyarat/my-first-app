@@ -3,7 +3,6 @@ import streamlit as st
 
 st.title("🟨 🟩 ⬛ Fruits Wordle")
 st.write("ลองทายคำศัพท์หมวดผลไม้ภาษาอังกฤษที่มี 5 ตัวอักษรให้ถูกภายใน 6 ครั้ง")
-st.write("💡 *พิมพ์คำศัพท์แล้วกด Enter บนคีย์บอร์ด หรือกดปุ่มทายเลยก็ได้*")
 
 # 1. กำหนดค่าเริ่มต้นใน session_state
 if "คลังคำ" not in st.session_state:
@@ -28,6 +27,8 @@ def เริ่มเกมใหม่():
     st.session_state.คำปริศนา = random.choice(st.session_state.คลังคำ)
     st.session_state.ประวัติการทาย = []
     st.session_state.เกมจบแล้ว = False
+    if "temp_guess" in st.session_state:
+        st.session_state.temp_guess = ""
 
 
 # 2. แสดงประวัติการทายทั้งหมดด้านบน
@@ -53,19 +54,22 @@ if รอบปัจจุบัน > 0:
             f"😢 หมดโอกาสทายแล้ว! คำศัพท์ที่ถูกต้องคือ: {st.session_state.คำปริศนา.upper()}"
         )
 
-# 4. ฟอร์มรับคำตอบ (กล่องพิมพ์หลักกล่องเดียว)
+# 4. ส่วนรับข้อมูลพิมพ์ทายคำศัพท์ (แบบไม่พึ่งพา st.form ปลอดภัยจากปัญหาข้อมูลสูญหาย)
 if not st.session_state.เกมจบแล้ว and รอบปัจจุบัน < โอกาสทั้งหมด:
-    with st.form(key="wordle_form", clear_on_submit=True):
-        เดาคำ = st.text_input(
-            f"พิมพ์คำศัพท์ 5 ตัวอักษร (เหลือโอกาส {โอกาสทั้งหมด - รอบปัจจุบัน} ครั้ง):",
-            max_chars=5,
-        ).lower().strip()
+    # ใช้อินพุตแบบปกติผูกกับตัวแปรคงที่ใน session_state
+    เดาคำ = st.text_input(
+        f"พิมพ์คำศัพท์ 5 ตัวอักษร (เหลือโอกาส {โอกาสทั้งหมด - รอบปัจจุบัน} ครั้ง):",
+        max_chars=5,
+        key="temp_guess",
+    ).lower().strip()
 
-        ปุ่มกด = st.form_submit_button("ทายเลย")
+    ปุ่มกด = st.button("ทายเลย")
 
-    # ประมวลผลเมื่อผู้เล่นกด Enter หรือกดปุ่ม
-    if ปุ่มกด and เดาคำ:
-        if len(เดาคำ) != 5:
+    # ประมวลผลเมื่อกดปุ่ม "ทายเลย"
+    if ปุ่มกด:
+        if not เดาคำ:
+            st.warning("⚠️ กรุณาพิมพ์คำศัพท์ก่อนกดปุ่มทาย")
+        elif len(เดาคำ) != 5:
             st.warning("❌ กรุณาพิมพ์คำศัพท์ให้ครบ 5 ตัวอักษร")
         else:
             คำปริศนา = st.session_state.คำปริศนา
@@ -87,6 +91,9 @@ if not st.session_state.เกมจบแล้ว and รอบปัจจุ
 
             สตริงคำใบ้ = "".join(ผลลัพธ์คำใบ้)
             st.session_state.ประวัติการทาย.append((เดาคำ, สตริงคำใบ้))
+            
+            # เคลียร์ค่าในกล่องพิมพ์ให้ว่างสำหรับรอบถัดไป
+            st.session_state.temp_guess = ""
             st.rerun()
 
 # 5. ปุ่มเริ่มเกมใหม่
