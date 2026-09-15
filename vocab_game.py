@@ -57,45 +57,45 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8):
 
      # ตรวจข้อ 3
     if u_ans3 == "fish":
-        st.success("✅ ข้อ 2: ถูกต้อง")
+        st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+        st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
      # ตรวจข้อ 4
     if u_ans4 == "fish":
-        st.success("✅ ข้อ 2: ถูกต้อง")
+        st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
 
      # ตรวจข้อ 5
     if u_ans5 == "fish":
-        st.success("✅ ข้อ 2: ถูกต้อง")
+        st.success("✅ ข้อ 5: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+        st.error(f"❌ ข้อ 5: ยังไม่ถูกต้อง (คุณตอบ '{u_ans5}')")
 
      # ตรวจข้อ 6
     if u_ans6 == "fish":
-        st.success("✅ ข้อ 2: ถูกต้อง")
+        st.success("✅ ข้อ 6: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+        st.error(f"❌ ข้อ 6: ยังไม่ถูกต้อง (คุณตอบ '{u_ans6}')")
 
      # ตรวจข้อ 7
     if u_ans7 == "fish":
-        st.success("✅ ข้อ 2: ถูกต้อง")
+        st.success("✅ ข้อ 7: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+        st.error(f"❌ ข้อ 7: ยังไม่ถูกต้อง (คุณตอบ '{u_ans7}')")
 
      # ตรวจข้อ 8
     if u_ans8 == "fish":
-        st.success("✅ ข้อ 2: ถูกต้อง")
+        st.success("✅ ข้อ 8: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
+        st.error(f"❌ ข้อ 8: ยังไม่ถูกต้อง (คุณตอบ '{u_ans8}')")
         
 
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
@@ -125,20 +125,36 @@ st.divider()
 
 # 3. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
 ans1 = st.text_input(
-    "ข้อ 1: ตัวละครสีฟ้า เสกของวิเศษได้",
+    "ข้อ 1: เป็นตัวละครลักษณะภายนอกเป็นตัวสีฟ้า มีความสามารถในการเสกของวิเศษออกมาได้",
     value=st.session_state.ans1_val,
 )
 ans2 = st.text_input(
-    "ข้อ 2: Cats love to eat `f _ s h`. 🐟",
+    "ข้อ 2: เป็นตัวละครลักษณะภายนอกเป็นผู้ชายใส่แว่น เสื้อสีเหลือง กางเกงสีฟ้า",
     value=st.session_state.ans2_val,
 )
 ans3 = st.text_input(
-    "ข้อ 3: ตัวละครสีฟ้า เสกของวิเศษได้",
-    value=st.session_state.ans1_val,
+    "ข้อ 3: เป็นตัวละครที่ลักษณะภายนอกเป็นคนรูปร่างใหญ่ ใส่เสื้อสีส้ม ชอบแกล้งโนบิตะ และ ร้องเพลงเพี้ยน",
+    value=st.session_state.ans3_val,
 )
 ans4 = st.text_input(
-    "ข้อ 4: Cats love to eat `f _ s h`. 🐟",
-    value=st.session_state.ans2_val,
+    "ข้อ 4: เป็นตัวละครหญิง มัดผมแกละสองข้าง ใส่เสื้อสีชมพูและกระโปรงสั้น ชอบเล่นไวโอลิน",
+    value=st.session_state.ans4_val,
+)
+ans5 = st.text_input(
+    "ข้อ 5: เป็นตัวละครชาย มีผมและปากแหลมๆ ตาตี่ รวย ชอบพูดจาโอ้อวดและเจ้าเล่ห์ ชอบแกล้งโนบิตะ",
+    value=st.session_state.ans5_val,
+)
+ans6 = st.text_input(
+    "ข้อ 6: เป็นตัวละครชาย ฉลาดและเรียนเก่ง หน้าตาดี บุคลิกดี ไม่พูดจาโอ้อวด",
+    value=st.session_state.ans6_val,
+)
+ans7 = st.text_input(
+    "ข้อ 7: ตัวละครสีฟ้า เสกของวิเศษได้",
+    value=st.session_state.ans7_val,
+)
+ans8 = st.text_input(
+    "ข้อ 8: Cats love to eat `f _ s h`. 🐟",
+    value=st.session_state.ans8_val,
 )
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
