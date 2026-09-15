@@ -32,12 +32,12 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8):
 
     u_ans1 = ans1.strip().lower()
     u_ans2 = ans2.strip().lower()
-    u_ans1 = ans3.strip().lower()
-    u_ans2 = ans4.strip().lower()
-    u_ans1 = ans5.strip().lower()
-    u_ans2 = ans6.strip().lower()
-    u_ans1 = ans7.strip().lower()
-    u_ans2 = ans8.strip().lower()
+    u_ans3 = ans3.strip().lower()
+    u_ans4 = ans4.strip().lower()
+    u_ans5 = ans5.strip().lower()
+    u_ans6 = ans6.strip().lower()
+    u_ans7 = ans7.strip().lower()
+    u_ans8 = ans8.strip().lower()
     
     # ตรวจข้อ 1
     if u_ans1 == "apple":
@@ -111,7 +111,7 @@ st.button("🎮 เริ่มเล่นเกม", on_click=reset_game)
 
 # 2. แถบแสดงเวลานับถอยหลัง
 if "start" in st.session_state and not st.session_state.get("is_ended", False):
-    time_left = int(30 - (time.time() - st.session_state.start))
+    time_left = int(360 - (time.time() - st.session_state.start))
 
     if time_left > 0:
         st.error(f"⏳ เหลือเวลา: {time_left} วินาที")
