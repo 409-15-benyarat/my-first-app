@@ -40,56 +40,56 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8):
     u_ans8 = ans8.strip().lower()
     
     # ตรวจข้อ 1
-    if u_ans1 == "apple":
+    if u_ans1 == "โดราเอม่อน":
         st.success("✅ ข้อ 1: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
 
     # ตรวจข้อ 2
-    if u_ans2 == "fish":
+    if u_ans2 == "โนบิตะ":
         st.success("✅ ข้อ 2: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
      # ตรวจข้อ 3
-    if u_ans3 == "fish":
+    if u_ans3 == "ไจแอนท์":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
      # ตรวจข้อ 4
-    if u_ans4 == "fish":
+    if u_ans4 == "ชิซูกะ":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
 
      # ตรวจข้อ 5
-    if u_ans5 == "fish":
+    if u_ans5 == "ซึเนโอะ":
         st.success("✅ ข้อ 5: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 5: ยังไม่ถูกต้อง (คุณตอบ '{u_ans5}')")
 
      # ตรวจข้อ 6
-    if u_ans6 == "fish":
+    if u_ans6 == "เดคิสุงิ":
         st.success("✅ ข้อ 6: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 6: ยังไม่ถูกต้อง (คุณตอบ '{u_ans6}')")
 
      # ตรวจข้อ 7
-    if u_ans7 == "fish":
+    if u_ans7 == "โดรามี":
         st.success("✅ ข้อ 7: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 7: ยังไม่ถูกต้อง (คุณตอบ '{u_ans7}')")
 
      # ตรวจข้อ 8
-    if u_ans8 == "fish":
+    if u_ans8 == "ไจโกะ":
         st.success("✅ ข้อ 8: ถูกต้อง")
         score += 1
     else:
@@ -99,9 +99,9 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8):
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
     if score == 8:
-        st.success("🎉 You win!")
+        st.success("🎉 God คุณคือแฟนพันธ์แท้การ์ตูนเรื่อง Doraemon")
     else:
-        st.error("💀 You lose!")
+        st.error("💀 Noob คุณไม่ใช่แฟนพันธ์แท้")
 
 
 # ----------------------------------------------------
@@ -151,7 +151,7 @@ ans7 = st.text_input(
     value=st.session_state.ans7_val,
 )
 ans8 = st.text_input(
-    "ข้อ 8: Cats love to eat `f _ s h`. 🐟",
+    "ข้อ 8: เป็นตัวละครหญิง รูปร่างอ้วนท้วน ชอบการวาดการ์ตูนเป็นอย่างมาก และเป็นน้องสาวของไจแอนท์",
     value=st.session_state.ans8_val,
 )
 
@@ -180,7 +180,7 @@ if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8)
 
 st.divider()
-st.write("นางเบญญารัตน์ นาวิก เลขที่ 15 ม.4/9")
+st.write("กลุ่ม2")
 
 
 
