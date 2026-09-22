@@ -99,7 +99,9 @@ def show_result_dialog(ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8):
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
     if score == 8:
-        st.success("🎉 God คุณคือแฟนพันธ์แท้การ์ตูนเรื่อง Doraemon")
+        st.success("🎉 God คุณคือแฟนพันธ์แท้การ์ตูนเรื่อง Doraemon !!")
+    if score == 5-7:
+        st.success("🎉 Pro เกือบเป็นแฟนพันธ์แท้แล้ว!")
     else:
         st.error("💀 Noob คุณไม่ใช่แฟนพันธ์แท้")
 
