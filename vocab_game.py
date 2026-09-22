@@ -147,7 +147,7 @@ ans6 = st.text_input(
     value=st.session_state.ans6_val,
 )
 ans7 = st.text_input(
-    "ข้อ 7: ตัวละครสีฟ้า เสกของวิเศษได้",
+    "ข้อ 7: เป็นหุ่นยนต์แมวสีเหลือง ติดโบว์สีแดงอันใหญ่ ชอบกินเมล่อนปัง และเป็นน้องสาวของโดราเอม่อน",
     value=st.session_state.ans7_val,
 )
 ans8 = st.text_input(
